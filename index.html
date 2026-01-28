@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Journal de bord — FAMAS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Pastille Komainu centrée -->
+  <div class="container">
+    <img src="Komainu.PNG" alt="Komainu" style="width:150px; height:150px; margin-bottom:20px;">
+  </div>
+
+  <h1>Journal de bord</h1>
+
+  <p>fait avec ❤️ par FAMAS</p>
+
+  <p>
+    <a class="button" href="https://app.bullbitcoin.com/registration/famas" target="_blank">
+      MISSION DESTROY FIAT
+    </a>
+  </p>
+
+  <!-- Bitcoin price -->
+  <div class="btc-price-home">
+    <small>Bitcoin (EUR)</small><br>
+    <strong id="btc-eur">—</strong>
+  </div>
+
+  <script>
+    async function updateBTCPrice() {
+      try {
+        const r = await fetch(
+          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=eur"
+        );
+        const d = await r.json();
+        document.getElementById("btc-eur").textContent =
+          d.bitcoin.eur.toLocaleString("fr-FR", {
+            style: "currency",
+            currency: "EUR"
+          });
+      } catch {
+        document.getElementById("btc-eur").textContent = "Erreur";
+      }
+    }
+
+    updateBTCPrice();
+    setInterval(updateBTCPrice, 60000);
+  </script>
+
+  <!-- Derniers posts : à compléter manuellement -->
+  <h2>Derniers posts</h2>
+  <ul>
+    <li><a href="/bibliotheque-bitcoin-autrichienne.html">Bibliothèque PDF et EPUB autrichienne</a></li>
+    <!-- Ajouter ici les autres posts -->
+  </ul>
+
+</body>
+</html>

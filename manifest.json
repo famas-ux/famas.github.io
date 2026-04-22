@@ -1,0 +1,9 @@
+{
+  "name": "Bitcoin Timestamp",
+  "short_name": "Timestamp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "icons": []
+}

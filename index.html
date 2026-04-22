@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bitcoin Timestamp Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-6">
+
+  <h1 class="title">Bitcoin Timestamp</h1>
+
+  <input type="file" id="fileInput" class="input">
+  <button class="btn" onclick="stamp()">Créer Timestamp</button>
+
+  <div id="result" class="box"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
